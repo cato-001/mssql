@@ -11,7 +11,7 @@ func Vjsonln(value any) {
 		Value any `json:"value"`
 	}
 	Jsonln(valOut {
-		Status: "error",
+		Status: "success",
 		Value: value,
 	})
 }
