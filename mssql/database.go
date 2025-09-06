@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"net/url"
+
+	_ "github.com/microsoft/go-mssqldb"
 )
 
 func OpenDB(host, username, token string) (*sql.DB, error) {
