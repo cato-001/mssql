@@ -29,7 +29,7 @@ func Ejsonln(err error) {
 
 func Jsonln(out any) {
 	content, err := json.Marshal(out)
-	if err != nil {
+	if err == nil {
 		fmt.Println(string(content))
 	}
 }
