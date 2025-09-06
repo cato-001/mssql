@@ -7,6 +7,21 @@ schema = 3
   [mod."github.com/alexflint/go-scalar"]
     version = "v1.2.0"
     hash = "sha256-PivG79qqrPJ1CksNiNNlwC+xPCMMTQxtda3rwk/z6LA="
-  [mod."github.com/stretchr/testify"]
-    version = "v1.9.0"
-    hash = "sha256-uUp/On+1nK+lARkTVtb5RxlW15zxtw2kaAFuIASA+J0="
+  [mod."github.com/golang-sql/civil"]
+    version = "v0.0.0-20220223132316-b832511892a9"
+    hash = "sha256-IEz9BkkHyFfs9R4aMxH/c/tD510qSyFEaKrpO4arWpQ="
+  [mod."github.com/golang-sql/sqlexp"]
+    version = "v0.1.0"
+    hash = "sha256-FhKWdt7vwzTbIsx2u+AzrKO1VFxTw/lbgD9/V5G76jw="
+  [mod."github.com/google/uuid"]
+    version = "v1.6.0"
+    hash = "sha256-VWl9sqUzdOuhW0KzQlv0gwwUQClYkmZwSydHG2sALYw="
+  [mod."github.com/microsoft/go-mssqldb"]
+    version = "v1.9.3"
+    hash = "sha256-9gHBXTWKH5/j0kSMqimsCMOb5wn7Nvw4VXunmOL0Xik="
+  [mod."golang.org/x/crypto"]
+    version = "v0.38.0"
+    hash = "sha256-5tTXlXQBlfW1sSNDAIalOpsERbTJlZqbwCIiih4T4rY="
+  [mod."golang.org/x/text"]
+    version = "v0.25.0"
+    hash = "sha256-gkOd4CuWr7OfCEk2EZ8KG5t9NRG7bM9Zj/lpv3y28yg="
