@@ -18,7 +18,10 @@ type (
 )
 
 func (cmd ExecuteCmd) Run(db *sql.DB) error {
-	arguments := Arguments(cmd.Args)
+	arguments, err := Arguments(cmd.Args)
+	if err != nil {
+		return err
+	}
 
 	result, err := db.Exec(cmd.Sql, arguments...)
 	if err != nil {

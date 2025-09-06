@@ -1,8 +1,6 @@
 package main
 
 import (
-	"database/sql"
-	"encoding/json"
 	"os"
 
 	"github.com/alexflint/go-arg"
@@ -42,26 +40,5 @@ func main() {
 		err := args.Execute.Run(db)
 		Ejsonln(err)
 	}
-}
-
-func Arguments(args string) []any {
-	var (
-		arguments = make([]any, 0)
-		jsonArgs any
-	)
-	err := json.Unmarshal([]byte(args), &jsonArgs)
-	if err != nil {
-		panic(err)
-	}
-
-	switch argsValue := jsonArgs.(type) {
-	case []any:
-		arguments = argsValue
-	case map[string]any:
-		for key, value := range argsValue {
-			arguments = append(arguments, sql.Named(key, value))
-		}
-	}
-	return arguments
 }
 

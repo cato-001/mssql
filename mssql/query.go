@@ -11,7 +11,10 @@ type QueryCmd struct {
 }
 
 func (cmd QueryCmd) Run(db *sql.DB) error {
-	arguments := Arguments(cmd.Args)
+	arguments, err := Arguments(cmd.Args)
+	if err != nil {
+		return err
+	}
 
 	rows, err := db.Query(cmd.Sql, arguments...)
 	if err != nil {
