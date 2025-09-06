@@ -10,9 +10,9 @@ import (
 
 func main() {
 	var args struct {
-		DatabaseHost string `arg:"--host,required,env:MSSQL_DATABASE_HOST" help:"the database host to connect to"`
-		DatabaseUser string `arg:"--user,required,env:MSSQL_DATABASE_USER" help:"the username for the connection"`
-		DatabaseToken string `arg:"--user,required,env:MSSQL_DATABASE_TOKEN" help:"the username for the connection"`
+		DatabaseHost string `arg:"--host,required,env:MSSQL_DATABASE_HOST" help:"database host to access"`
+		DatabaseUser string `arg:"--user,required,env:MSSQL_DATABASE_USER" help:"user for the database access"`
+		DatabaseToken string `arg:"--token,required,env:MSSQL_DATABASE_TOKEN" help:"token for the database access"`
 
 		Query *QueryCmd `arg:"subcommand"`
 		Execute *ExecuteCmd `arg:"subcommand"`
