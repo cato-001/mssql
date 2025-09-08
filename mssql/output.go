@@ -17,6 +17,9 @@ func Vjsonln(value any) {
 }
 
 func Ejsonln(err error) {
+	if err == nil {
+		return
+	}
 	type errOut struct {
 		Status string `json:"status"`
 		Error string `json:"error"`

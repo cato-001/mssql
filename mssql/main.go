@@ -19,17 +19,11 @@ func main() {
 	parser, err := arg.NewParser(arg.Config{
 		Program: "mssql",
 	}, &args)
-	if err != nil {
-		Ejsonln(err)
-		return
-	}
+	Ejsonln(err)
 	parser.MustParse(os.Args[1:])
 
 	db, err := OpenDB(args.DatabaseHost, args.DatabaseUser, args.DatabaseToken)
-	if err != nil {
-		Ejsonln(err)
-		return
-	}
+	Ejsonln(err)
 	defer db.Close()
 
 	if args.Query != nil {
