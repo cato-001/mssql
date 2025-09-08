@@ -13,7 +13,7 @@ type (
 
 	ExecuteResult struct {
 		RowsAffected int64 `json:"rows-affected"`
-		LastInserted int64 `json:"last-inserted"`
+		LastInserted *int64 `json:"last-inserted"`
 	}
 )
 
@@ -28,20 +28,20 @@ func (cmd ExecuteCmd) Run(db *sql.DB) error {
 		return fmt.Errorf("while executing command db: %e", err)
 	}
 
-	rowsAffected, err := result.RowsAffected()
+	var out ExecuteResult
+	out.RowsAffected, err = result.RowsAffected()
 	if err != nil {
 		return fmt.Errorf("while getting affected rows: %e", err)
 	}
 
 	lastInserted, err := result.LastInsertId()
-	if err != nil {
-		return fmt.Errorf("while getting last id: %e", err)
+	if err == nil {
+		out.LastInserted = &lastInserted
+	} else {
+		out.LastInserted = nil
 	}
 
-	Vjsonln(ExecuteResult {
-		RowsAffected: rowsAffected,
-		LastInserted: lastInserted,
-	})
+	Vjsonln(out)
 
 	return nil
 }
